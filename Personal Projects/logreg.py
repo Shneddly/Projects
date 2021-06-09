@@ -1,5 +1,5 @@
 '''
-Simple logistic regression algorithm
+Simple logistic regression algorithm (not yet complete)
 '''
 
 import numpy as np

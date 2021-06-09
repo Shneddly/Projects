@@ -16,6 +16,7 @@ def gradient_descent(features, target, alpha, epochs):
     weights = np.zeros(features.shape[1])
     bias = 0
     parameters = {}
+    J = []
     
     for epoch in range(epochs):
         
@@ -25,8 +26,9 @@ def gradient_descent(features, target, alpha, epochs):
         dB = 1/size * np.sum(sigma - target)
         weights -= alpha * dW
         bias -= alpha * dB
+        J.append(cost)
     
     parameters['weights'] = weights
     parameters['bias'] = bias
     
-    return parameters
+    return parameters, J

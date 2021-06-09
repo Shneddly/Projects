@@ -1,3 +1,7 @@
+'''
+A program written to practice using loops, class objects, and user interfaces to create a simple game of blackjack
+'''
+
 from IPython.display import clear_output
 import random
 

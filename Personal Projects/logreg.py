@@ -1,5 +1,5 @@
 '''
-Simple logistic regression algorithm (not yet complete)
+Simple logistic regression algorithm
 '''
 
 import numpy as np
@@ -32,3 +32,15 @@ def gradient_descent(features, target, alpha, epochs):
     parameters['bias'] = bias
     
     return parameters, J
+
+def predict(test_features, parameters):
+    weights = parameters['weights']
+    bias = parameters['bias']
+    prediction = sigmoid(np.dot(test_features,weights)+bias)
+    return prediction
+
+def score(predictions, test_targets):
+    for i in range(len(predictions)):
+        predictions[i] = 1 if predictions[i] >= 0.5 else 0
+    score = sum(predictions == test_targets) / len(test_targets)
+    return score
